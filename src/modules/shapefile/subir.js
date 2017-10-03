@@ -5,7 +5,7 @@ import Style from 'ol/style/style';
 import Stroke from 'ol/style/stroke';
 import Fill from 'ol/style/fill';
 import Circle from 'ol/style/circle';
-var parseQueryString = require('js/lib/parseQueryString');
+var parseQueryString = require('lib/parseQueryString');
 
 function cargarShapefile(url) {
   $('#cargando').removeClass('hidden');

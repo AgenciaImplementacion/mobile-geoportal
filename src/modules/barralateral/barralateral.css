@@ -16,7 +16,7 @@
 .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: url('../img/ide-at.jpg') center / cover;
+  background: url('ide-at.jpg') center / cover;
 }
 
 .demo-card-wide > .mdl-card__menu {
