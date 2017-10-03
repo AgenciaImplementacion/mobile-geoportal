@@ -1,24 +1,31 @@
-# odk-viewer
-Visor web básico de datos geográficos servicio de publicación.
+# mobile-geoportal
+Versión del GeoPortal para dispositivos móviles, se ve desde el navegador web inicialmente.
 
 # Requerimientos
 
-- Openlayers 4
-- Webpack 2
-- nodejs (necesario instalar)
-- npm (necesario instalar)
+- nodejs (necesario instalar): con este lenguaje se hace el build del projecto
+y el arranque de entorno de desarrollo.
+- npm (necesario instalar): maneja las dependencias usadas en el proyecto
+
+# Dependencias de desarrollo
+
+- chart.js: api escogida para realizar gráficas
+- color: biblioteca para la transformación de colores
+- jquery: nos permite manejar el dom de la aplicación
+- material-design-lite: la biblioteca de gráficos con diseño material (creado por google)
+- ol: biblioteca para el manejo del mapa
 
 # Entorno de desarrollo
 1) Clonar el proyecto.
 
 ```bash
-git clone https://github.com/AgenciaImplementacion/odk-viewer
+git clone https://github.com/AgenciaImplementacion/mobile-geoportal
 ```
 
 2) Instalar las dependencias.
 
 ```bash
-cd odk-viewer
+cd mobile-geoportal
 npm install
 ```
 ## Desarrollo live-reload

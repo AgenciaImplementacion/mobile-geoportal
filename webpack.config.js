@@ -41,8 +41,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: './src/views/index.html'
     }),
-    new ExtractTextPlugin('styles.css'),
-    new webpack.optimize.UglifyJsPlugin()
+    new ExtractTextPlugin('styles.css')
   ],
   resolve: {
     modules: [
