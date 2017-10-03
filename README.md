@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/AgenciaImplementacion/mobile-geoportal.svg?branch=master)](https://travis-ci.org/AgenciaImplementacion/mobile-geoportal)
+
 # mobile-geoportal
 Versión del GeoPortal para dispositivos móviles, se ve desde el navegador web inicialmente.
 
