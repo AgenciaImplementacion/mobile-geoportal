@@ -1,1 +1,2 @@
-In this path would be images JPEG, PNG or GIF, that is needed in css files.
+En este directorio deben estar los archivos de configuración JSON o YAML usados
+a lo largo de los módulos del proyecto.
