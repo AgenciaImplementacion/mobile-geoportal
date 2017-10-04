@@ -1,0 +1,861 @@
+{
+  "general": {
+    "showInitialMessage": false,
+    "initialMessage": "Bienvenidos al Geoportal de la IDE para la Administracion de Tierras (piloto)"
+  },
+  "tools": {
+    "scalebar": {
+      "enabled": true,
+      "displaySystem": "metric",
+      "divisions": 2,
+      "subdivisions": 2,
+      "singleLine": false
+    },
+    "loadingPanel": {
+      "enabled": false
+    },
+    "mouseCoordinates": {
+      "enabled": true,
+      "numDigits": 0
+    },
+    "measures": {
+      "enabled": false
+    },
+    "overview": {
+      "enabled": true
+    }
+  },
+  "map": {
+    "projection": "EPSG:900913",
+    "units": "m",
+    "defaultExtent": [-74.161, 4.558, -74.088, 4.599],
+    "maxScale": 1066.364791776453,
+    "customScales": [1000, 2000, 5000, 10000, 25000, 50000, 100000, 150000, 200000, 250000, 500000, 1000000, 2000000, 3000000, 4000000],
+    "dotsPerInch": 90.7142857142857
+  },
+  "layers": [{
+    "group": "34",
+    "groupName": "Capas de fondo",
+    "source": "osm",
+    "title": "OSM",
+    "name": "OSM",
+    "position": 1,
+    "enabled": false
+  }, {
+    "url": "http://geoapps.ideam.gov.co:8080/geoserver/informacion_basica/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0
+    },
+    "group": "49",
+    "description": "Servicio web que muestra las areas correspondientes a los parques nacionales declarados oficialmente.",
+    "responsible": "",
+    "external": false,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": false,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "Parques Nacionales",
+    "source": "wms",
+    "title": "Parques Nacionales de Colombia",
+    "name": "GDBIDEAM.PARQUES_NACIONALES",
+    "position": 1,
+    "enabled": false
+  }, {
+    "url": "http://geoapps.ideam.gov.co:8080/geoserver/unidades_analisis/wms?",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "48",
+    "description": "Servicio Web de mapas (WMS) que contiene las unidades de análisis para el ordenamiento ambiental de territorio definidas por el Ideam en convenio con el Instituto Geográfico Agustín Codazzi (IGAC), a escala 1:500.000 llamadas zonificación hidrográfica de Colombia. Estas unidades fueron modificadas por el IDEAM, generando esta versión en 2013.",
+    "responsible": "",
+    "external": false,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": false,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "IDEAM",
+    "source": "wms",
+    "title": "Zonificación Hidrográfica de Colombia Año 2013",
+    "name": "GDBIDEAM.ZONIFICACION_HIDROGRAFICA_2013",
+    "position": 1,
+    "enabled": false
+  }, {
+    "url": "http://idesc.cali.gov.co:8081/geoserver/wms?",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0
+    },
+    "group": "45",
+    "description": "Manzanas de la zona urbana del Municipio de Santiago de Cali. Escala 1:2000. Sistema de Coordenadas MAGNA SIRGAS. Metadato: http://idesc.cali.gov.co:8080/swami/services/reports?id\u003d2968\u0026type\u003dhtml",
+    "responsible": "",
+    "external": false,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": false,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "IDESC",
+    "source": "wms",
+    "title": "Manzanas",
+    "name": "idesc:mc_manzanas",
+    "position": 1,
+    "enabled": false
+  }, {
+    "url": "http://geocarto.igac.gov.co/geoservicios/cien_mil/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0
+    },
+    "group": "44",
+    "description": "Layer-Group type layer: Todas",
+    "responsible": "",
+    "external": false,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": false,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "IGAC",
+    "source": "wms",
+    "title": "Todas",
+    "name": "Todas",
+    "position": 1,
+    "enabled": false
+  }, {
+    "url": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wms",
+    "wmsOptions": {
+      "format": "image/png8",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": false,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "43",
+    "description": "Zonas de Vida",
+    "responsible": "SINIT",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "wfsUrl": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wfs",
+    "groupName": "Fisio",
+    "source": "wms",
+    "title": "Zonas de Vida",
+    "name": "n2503va000000_hn",
+    "position": 3,
+    "enabled": false
+  }, {
+    "url": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wms",
+    "wmsOptions": {
+      "format": "image/png8",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "43",
+    "description": "Ecosistemas vegetales",
+    "responsible": "SINIT",
+    "external": true,
+    "downloadable": true,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "ecosistema",
+    "referenceDate": "",
+    "wfsUrl": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wfs",
+    "groupName": "Fisio",
+    "source": "wms",
+    "title": "Ecosistemas vegetales",
+    "name": "n2502va002001_hn",
+    "position": 4,
+    "enabled": false
+  }, {
+    "url": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wms",
+    "wmsOptions": {
+      "format": "image/png8",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": false,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "43",
+    "description": "Red Hídrica - escala 1:50000",
+    "responsible": "SINIT",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "wfsUrl": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wfs",
+    "groupName": "Fisio",
+    "source": "wms",
+    "title": "Red Hídrica - escala 1:50000",
+    "name": "m2301vl001970_hn",
+    "position": 1,
+    "enabled": false
+  }, {
+    "url": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wms",
+    "wmsOptions": {
+      "format": "image/png8",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "43",
+    "description": "Hidrogeología",
+    "responsible": "SINIT",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "wfsUrl": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wfs",
+    "groupName": "Fisio",
+    "source": "wms",
+    "title": "Hidrogeología",
+    "name": "n2303vl000000_hn",
+    "position": 2,
+    "enabled": false
+  }, {
+    "url": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wms",
+    "wmsOptions": {
+      "format": "image/png8",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "42",
+    "description": "Asentamientos humanos",
+    "responsible": "SINIT",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": true,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "caserio",
+    "referenceDate": "",
+    "wfsUrl": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wfs",
+    "groupName": "Cartografía",
+    "source": "wms",
+    "title": "Asentamientos humanos",
+    "name": "m1105vp001988_hn",
+    "position": 3,
+    "enabled": false
+  }, {
+    "url": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wms",
+    "wmsOptions": {
+      "format": "image/png8",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": false,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "42",
+    "description": "Limites departamentales",
+    "responsible": "SINIT",
+    "external": true,
+    "downloadable": true,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "metadataUrl": "4a76139b-e195-464e-9851-c1ffe6c856c3",
+    "wfsUrl": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wfs",
+    "groupName": "Cartografía",
+    "source": "wms",
+    "title": "Limites departamentales",
+    "name": "m1102va001970_hn",
+    "position": 1,
+    "enabled": false,
+    "referenceLayerForAlerts": true
+  }, {
+    "url": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wms",
+    "wmsOptions": {
+      "format": "image/png8",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "42",
+    "description": "Curvas de nivel (100m)",
+    "responsible": "SINIT",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "wfsUrl": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wfs",
+    "groupName": "Cartografía",
+    "source": "wms",
+    "title": "Curvas de nivel (100m)",
+    "name": "r1201vl001970_hn",
+    "position": 4,
+    "enabled": false
+  }, {
+    "url": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wms",
+    "wmsOptions": {
+      "format": "image/png8",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": false,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "42",
+    "description": "Limites Municipios",
+    "responsible": "SINIT",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "nombre",
+    "referenceDate": "",
+    "wfsUrl": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wfs",
+    "groupName": "Cartografía",
+    "source": "wms",
+    "title": "Limites Municipios",
+    "name": "m1103va002001_hn",
+    "position": 2,
+    "enabled": false
+  }, {
+    "url": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wms",
+    "wmsOptions": {
+      "format": "image/png8",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "41",
+    "description": "Red Vial - escala 1:50000",
+    "responsible": "SINIT",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "wfsUrl": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wfs",
+    "groupName": "Infraestructura",
+    "source": "wms",
+    "title": "Red Vial - escala 1:50000",
+    "name": "m3101vl001970_hn",
+    "position": 1,
+    "enabled": false
+  }, {
+    "url": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wms",
+    "wmsOptions": {
+      "format": "image/png8",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0
+    },
+    "group": "38",
+    "description": "La capa contiene datos sobre las Microcuencas declaradas legalmente.",
+    "responsible": "ICF",
+    "external": false,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": false,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "Microcuencas",
+    "source": "wms",
+    "title": "Microcuencas declaradas",
+    "name": "microcuencas_16_5_32616",
+    "position": 1,
+    "enabled": false
+  }, {
+    "url": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wms",
+    "wmsOptions": {
+      "format": "image/png8",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "37",
+    "description": "Areas Protegidas de Honduras",
+    "responsible": "ICF",
+    "external": false,
+    "downloadable": true,
+    "wfsSearchEnabled": true,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "nombre2",
+    "referenceDate": "",
+    "metadataUrl": "104cf197-f88e-11e4-a3e1-fc15b4ed182a",
+    "wfsUrl": "http://geoportal.icf.gob.hn:8081/geoserver/icf/wfs",
+    "groupName": "Áreas protegidas",
+    "source": "wms",
+    "title": "Areas Protegidas",
+    "name": "areas_protegidas",
+    "position": 1,
+    "enabled": false
+  }, {
+    "url": "../geoserver/interlis/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": false,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "50",
+    "description": "Sitios de Interes de la ciudad de Bogotá D.C.",
+    "responsible": "IDECA",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "INTERLIS",
+    "source": "wms",
+    "title": "Sitios de Interes",
+    "name": "sit_interes",
+    "position": 1,
+    "enabled": false
+  }, {
+    "url": "../geoserver/interlis/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": false,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "50",
+    "description": "Corrientes de Agua en la ciudad de Bogotá D.C.",
+    "responsible": "IDECA",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "INTERLIS",
+    "source": "wms",
+    "title": "Corriente de Agua",
+    "name": "Corriente_de_agua",
+    "position": 3,
+    "enabled": false
+  }, {
+    "url": "../geoserver/interlis/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": false,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "50",
+    "description": "Malla Vial de la ciudad de Bogotá D.C.",
+    "responsible": "IDECA",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "INTERLIS",
+    "source": "wms",
+    "title": "Malla Vial Integral",
+    "name": "mvi",
+    "position": 2,
+    "enabled": false
+  }, {
+    "url": "../geoserver/interlis/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": false,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "50",
+    "description": "Cuerpos de Agua en la ciudad de Bogotá D.C.",
+    "responsible": "IDECA",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "INTERLIS",
+    "source": "wms",
+    "title": "Cuerpo de Agua",
+    "name": "cuer_agua",
+    "position": 5,
+    "enabled": false
+  }, {
+    "url": "../geoserver/interlis/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0
+    },
+    "group": "50",
+    "description": "",
+    "responsible": "",
+    "external": false,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": false,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "INTERLIS",
+    "source": "wms",
+    "title": "Zonas OT",
+    "name": "vista_zonas_ot",
+    "position": 7,
+    "enabled": false
+  }, {
+    "url": "../geoserver/interlis/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0
+    },
+    "group": "50",
+    "description": "",
+    "responsible": "",
+    "external": false,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": false,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "INTERLIS",
+    "source": "wms",
+    "title": "Curso 2017 Julio - Predios",
+    "name": "curso_interlis_2017_julio_vista_predio",
+    "position": 8,
+    "enabled": false
+  }, {
+    "url": "../geoserver/interlis/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "50",
+    "description": "",
+    "responsible": "",
+    "external": false,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": false,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "INTERLIS",
+    "source": "wms",
+    "title": "amenaza_inundacion",
+    "name": "amenaza_inundacion",
+    "position": 6,
+    "enabled": false
+  }, {
+    "url": "../geoserver/interlis/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": false,
+      "opacity": 1.0,
+      "tileSize": [512, 512]
+    },
+    "group": "50",
+    "description": "Predios Práctica",
+    "responsible": "AGENCIA DE IMPLEMENTACION",
+    "external": true,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": true,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "wfsUrl": "../geoserver/interlis/ows",
+    "groupName": "INTERLIS",
+    "source": "wms",
+    "title": "Predios",
+    "name": "vista_predio",
+    "position": 4,
+    "enabled": false
+  }, {
+    "url": "../geoserver/interlis/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0
+    },
+    "group": "52",
+    "description": "",
+    "responsible": "",
+    "external": false,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": false,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "La Palma",
+    "source": "wms",
+    "title": "predios_la_palma",
+    "name": "predios_la_palma",
+    "position": 1,
+    "enabled": false
+  }, {
+    "url": "../geoserver/ODK/wms",
+    "wmsOptions": {
+      "format": "image/png",
+      "transparent": true
+    },
+    "olOptions": {
+      "buffer": 0,
+      "displayOutsideMaxExtent": true,
+      "isBaseLayer": false,
+      "singleTile": true,
+      "opacity": 1.0
+    },
+    "group": "52",
+    "description": "",
+    "responsible": "",
+    "external": false,
+    "downloadable": false,
+    "wfsSearchEnabled": false,
+    "showInfoDialog": false,
+    "attributeNameForInfo": "",
+    "referenceDate": "",
+    "groupName": "La Palma",
+    "source": "wms",
+    "title": "ortofoto_la_palma_208IB2",
+    "name": "ortofoto_la_palma_208IB2",
+    "position": 2,
+    "enabled": false
+  }],
+  "layersGroups": [{
+    "name": "34",
+    "code": "34",
+    "background": true,
+    "title": "Capas de fondo",
+    "position": 1
+  }, {
+    "name": "49",
+    "code": "49",
+    "background": false,
+    "title": "Parques Nacionales",
+    "position": 6
+  }, {
+    "name": "48",
+    "code": "48",
+    "background": false,
+    "title": "IDEAM",
+    "position": 5
+  }, {
+    "name": "45",
+    "code": "45",
+    "background": false,
+    "title": "IDESC",
+    "position": 4
+  }, {
+    "name": "44",
+    "code": "44",
+    "background": false,
+    "title": "IGAC",
+    "position": 3
+  }, {
+    "name": "51",
+    "code": "51",
+    "background": false,
+    "title": "CAPACITACION",
+    "position": 2
+  }, {
+    "name": "43",
+    "code": "43",
+    "background": false,
+    "title": "Fisio",
+    "position": 14
+  }, {
+    "name": "42",
+    "code": "42",
+    "background": false,
+    "title": "Cartografía",
+    "position": 13
+  }, {
+    "name": "41",
+    "code": "41",
+    "background": false,
+    "title": "Infraestructura",
+    "position": 12
+  }, {
+    "name": "38",
+    "code": "38",
+    "background": false,
+    "title": "Microcuencas",
+    "position": 11
+  }, {
+    "name": "37",
+    "code": "37",
+    "background": false,
+    "title": "Áreas protegidas",
+    "position": 10
+  }, {
+    "name": "47",
+    "code": "47",
+    "background": false,
+    "title": "CHIA",
+    "position": 9
+  }, {
+    "name": "50",
+    "code": "50",
+    "background": false,
+    "title": "INTERLIS",
+    "position": 8
+  }, {
+    "name": "52",
+    "code": "52",
+    "background": false,
+    "title": "La Palma",
+    "position": 7
+  }]
+}
