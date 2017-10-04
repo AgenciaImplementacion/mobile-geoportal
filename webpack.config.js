@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const MinifyPlugin = require("babel-minify-webpack-plugin");
+const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 var prodPlugins = [];
 
@@ -29,7 +29,7 @@ const config = {
     path: path.resolve(__dirname, 'build')
   },
   devServer: {
-    contentBase: path.join(__dirname, "build"),
+    contentBase: path.join(__dirname, 'build'),
     host: '0.0.0.0',
     compress: true,
     port: 9000
@@ -64,8 +64,8 @@ const config = {
   ].concat(prodPlugins),
   resolve: {
     modules: [
-      "node_modules",
-      path.resolve(__dirname, "src")
+      'node_modules',
+      path.resolve(__dirname, 'src')
     ]
   },
   performance: {

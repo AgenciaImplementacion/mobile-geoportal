@@ -6,7 +6,8 @@
     "build": "NODE_ENV=production webpack --config webpack.config.js",
     "live": "webpack-dev-server --progress --colors",
     "watch": "webpack --watch --colors",
-    "pack": "npm run build && tar -czvf build.tar.gz build"
+    "pack": "npm run build && tar -czvf build.tar.gz build",
+    "clean": "rm -rf build build.tar.gz"
   },
   "keyworks": [
     "geoportal",
@@ -14,7 +15,7 @@
     "gis"
   ],
   "author": "Agencia Implementación Swissphoto Incige",
-  "license": "MIT",
+  "license": "AGPLv3",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-loader": "^6.4.1",
