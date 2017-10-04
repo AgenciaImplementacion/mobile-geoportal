@@ -2,6 +2,8 @@ require('./utils');
 
 import createLayer from './addChartDataToMap';
 
+$('#contenido-charts').css('display', 'block'); // ver el index.html
+
 var randomScalingFactor = function() {
   return Math.round(Math.random() * 100);
 };

@@ -10,4 +10,5 @@ import 'lib/preprocess';
 import loadshp from 'lib/preview.js';
 window.loadshp = loadshp;
 import './subir.js';
+require('./popup.css');
 import './popup.js';

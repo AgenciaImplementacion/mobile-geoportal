@@ -53,7 +53,6 @@ window.map = new Map({
 
 window.map.getLayer = _getLayerById;
 
-
 function _getLayerById(id) {
   var layers = window.map.getLayers().getArray();
   return layers.find(function(layer) {
