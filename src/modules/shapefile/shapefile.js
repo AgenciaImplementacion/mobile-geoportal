@@ -1,7 +1,6 @@
 require('./shapefile.css');
-//var proj5 = require('proj4/projs');
-//console.log(proj5);
-// window.proj5 = proj5;
+var proj4 = require('proj4/dist/proj4');
+window.proj4 = proj4;
 import JSZip from 'lib/jszip';
 window.JSZip = JSZip;
 import JSZipUtils from 'lib/jszip-utils';
