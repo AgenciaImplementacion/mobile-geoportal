@@ -1,7 +1,24 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
 const path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MinifyPlugin = require("babel-minify-webpack-plugin");
+
+var prodPlugins = [];
+
+// For production
+if (process.env.NODE_ENV == 'production') {
+  // https://webpack.js.org/plugins/babel-minify-webpack-plugin/
+  const minifyOpts = {
+    removeConsole: true
+  };
+
+  const pluginOpts = {
+    comments: false
+  };
+
+  prodPlugins.push(new MinifyPlugin(minifyOpts, pluginOpts));
+}
 
 const config = {
   entry: {
@@ -20,17 +37,19 @@ const config = {
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
-      use: 'babel-loader',
-      exclude: path.resolve(__dirname, 'node_modules/')
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'babel-loader'
+      }
     }, {
       test: /\.css$/,
       use: ExtractTextPlugin.extract({
-        use: [{
+        use: {
           loader: 'css-loader',
           options: {
             minimize: true
           }
-        }]
+        }
       })
     }, {
       test: /\.(gif|png|jpg)$/,
@@ -42,12 +61,17 @@ const config = {
       template: './src/views/index.html'
     }),
     new ExtractTextPlugin('styles.css')
-  ],
+  ].concat(prodPlugins),
   resolve: {
     modules: [
       "node_modules",
       path.resolve(__dirname, "src")
     ]
+  },
+  performance: {
+    hints: 'warning', // 'error' or false are valid too
+    maxEntrypointSize: 100000, // in bytes
+    maxAssetSize: 450000, // in bytes
   }
 };
 
