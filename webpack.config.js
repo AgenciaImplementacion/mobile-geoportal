@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 var prodPlugins = [];
-var lintError = function(){};
+var prodRules = [];
 var performanceOpts = {};
 // For production
 if (process.env.NODE_ENV == 'production') {
@@ -20,9 +20,20 @@ if (process.env.NODE_ENV == 'production') {
 
   prodPlugins.push(new MinifyPlugin(minifyOpts, pluginOpts));
 
-  lintError = function (errors) {
-    console.log(errors);
-  }
+  prodRules.push({
+    test: /\.js$/, // include .js files
+    enforce: 'pre', // preload the jshint loader
+    exclude: /(node_modules|bower_components)/,
+    use: {
+      loader: 'jshint-loader',
+      options: { // any jshint option http://www.jshint.com/docs/options/
+        camelcase: true,
+        emitErrors: false,
+        failOnHint: false,
+        reporter: lintError
+      }
+    }
+  });
 
   performanceOpts = {
     hints: 'warning', // 'error' or false are valid too
@@ -47,19 +58,6 @@ const config = {
   },
   module: {
     rules: [{
-      test: /\.js$/, // include .js files
-      enforce: 'pre', // preload the jshint loader
-      exclude: /(node_modules|bower_components)/,
-      use: {
-        loader: 'jshint-loader',
-        options: { // any jshint option http://www.jshint.com/docs/options/
-          camelcase: true,
-          emitErrors: false,
-          failOnHint: false,
-          reporter: lintError
-        }
-      }
-    }, {
       test: /\.(js|jsx)$/,
       exclude: /(node_modules|bower_components)/,
       use: {
@@ -81,7 +79,7 @@ const config = {
     }, {
       test: /\.(woff|woff2|eot|ttf|otf)$/,
       use: 'file-loader'
-    }]
+    }].concat(prodRules)
   },
   plugins: [
     new HtmlWebpackPlugin({
