@@ -9,6 +9,19 @@
   top: 10px;
 }
 
+#contenido-barra {
+  height: -webkit-calc(100% - 196px);
+  height: -moz-calc(100% - 196px);
+  height: calc(100% - 196px);
+}
+
+#contenido-barra-lateral{
+  height: -webkit-calc(100% - 250px);
+  height: -moz-calc(100% - 250px);
+  height: calc(100% - 250px);
+  overflow-y: auto;
+}
+
 .demo-card-wide.mdl-card {
   width: 512px;
 }
@@ -21,16 +34,6 @@
 
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
-}
-
-#contenido-barra-lateral {
-  overflow-y: auto;
-  position: absolute;
-  margin: 10px;
-  height: -webkit-calc(100% - 252px);
-  height: -moz-calc(100% - 252px);
-  height: calc(100% - 252px);
-  width: 295px;
 }
 
 #contenido-barra-lateral p{
