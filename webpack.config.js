@@ -5,7 +5,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 var prodPlugins = [];
-
+var lintError = function(){};
+var performanceOpts = {};
 // For production
 if (process.env.NODE_ENV == 'production') {
   // https://webpack.js.org/plugins/babel-minify-webpack-plugin/
@@ -18,6 +19,16 @@ if (process.env.NODE_ENV == 'production') {
   };
 
   prodPlugins.push(new MinifyPlugin(minifyOpts, pluginOpts));
+
+  lintError = function (errors) {
+    console.log(errors);
+  }
+
+  performanceOpts = {
+    hints: 'warning', // 'error' or false are valid too
+    maxEntrypointSize: 100000, // in bytes
+    maxAssetSize: 450000, // in bytes
+  };
 }
 
 const config = {
@@ -36,6 +47,19 @@ const config = {
   },
   module: {
     rules: [{
+      test: /\.js$/, // include .js files
+      enforce: 'pre', // preload the jshint loader
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: 'jshint-loader',
+        options: { // any jshint option http://www.jshint.com/docs/options/
+          camelcase: true,
+          emitErrors: false,
+          failOnHint: false,
+          reporter: lintError
+        }
+      }
+    }, {
       test: /\.(js|jsx)$/,
       exclude: /(node_modules|bower_components)/,
       use: {
@@ -52,7 +76,10 @@ const config = {
         }
       })
     }, {
-      test: /\.(gif|png|jpg)$/,
+      test: /\.(gif|svg|png|jpg)$/,
+      use: 'file-loader'
+    }, {
+      test: /\.(woff|woff2|eot|ttf|otf)$/,
       use: 'file-loader'
     }]
   },
@@ -68,11 +95,7 @@ const config = {
       path.resolve(__dirname, 'src')
     ]
   },
-  performance: {
-    hints: 'warning', // 'error' or false are valid too
-    maxEntrypointSize: 100000, // in bytes
-    maxAssetSize: 450000, // in bytes
-  }
+  performance: performanceOpts
 };
 
 module.exports = config;

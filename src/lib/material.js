@@ -1,2 +1,2 @@
-require('material-design-lite/material.css');
-import 'material-design-lite/material';
+require('materialize-css/dist/css/materialize.css');
+import 'materialize-css/dist/js/materialize.js';
