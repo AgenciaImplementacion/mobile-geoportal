@@ -30,7 +30,9 @@ if (process.env.NODE_ENV == 'production') {
         camelcase: true,
         emitErrors: false,
         failOnHint: false,
-        reporter: lintError
+        reporter: function (errors) {
+          console.log(errors);
+        }
       }
     }
   });
