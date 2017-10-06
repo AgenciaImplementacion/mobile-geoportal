@@ -57,7 +57,10 @@ https://www.npmjs.com/package/color
   google). http://materializecss.com https://material.io
 - ol: biblioteca para el manejo del mapa. http://openlayers.org
 http://openlayers.org/en/latest/apidoc
-- proj4:
+- proj4: convierte entre coordenadas geográficas. Se usa para transformar
+las coordenadas de medios externos como shapefile a coordenadas del mapa para
+visualizarse correctamente. http://proj4js.org
+
 # Entorno de desarrollo
 1) Clonar el proyecto.
 
