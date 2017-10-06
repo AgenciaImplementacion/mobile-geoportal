@@ -5,7 +5,7 @@ Versión del GeoPortal para dispositivos móviles, se ve desde el navegador web 
 
 # Requerimientos
 
-- nodejs (necesario instalar): con este lenguaje se hace el build del projecto
+- nodejs (necesario instalar): con este lenguaje se hace el build del proyecto
 y el arranque de entorno de desarrollo. https://nodejs.org
 - npm (necesario instalar): maneja las dependencias usadas en el proyecto.
 https://www.npmjs.com
@@ -88,7 +88,7 @@ Abrir el `index.html` para ver los resultados.
 open index.html
 ```
 
-# Conveniciones para construir el projecto
+# Conveniciones para construir el proyecto
  - https://github.com/kriasoft/Folder-Structure-Conventions
 
 # Basado en
