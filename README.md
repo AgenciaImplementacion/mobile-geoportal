@@ -29,6 +29,10 @@ en código. https://www.npmjs.com/package/file-loader
 - html-webpack-plugin: es un loader que permite extraer el texto de
 ficheros html, se usa para el index.html como plantilla.
 https://github.com/jantimon/html-webpack-plugin
+- jshint: herramienta de análisis de código, permite detectar errores de
+sintáxis, lógica y estilo principalmente. http://jshint.com
+- jshint-loader: el loader de jshint para webpack.
+https://github.com/webpack-contrib/jshint-loader
 - url-loader: por ahora no se usa por problemas de rendimiento del JS compilado,
 pero se puede usar para codificar archivos en base64 y dárselos a los programas
 JS como URLs. Ejemplo, una imagen punto.png se convierte en la URL, "data:image/png;base64,iVBORw0KGgoAAA
@@ -53,7 +57,7 @@ https://www.npmjs.com/package/color
   google). http://materializecss.com https://material.io
 - ol: biblioteca para el manejo del mapa. http://openlayers.org
 http://openlayers.org/en/latest/apidoc
-
+- proj4:
 # Entorno de desarrollo
 1) Clonar el proyecto.
 
